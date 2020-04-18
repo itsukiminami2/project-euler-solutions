@@ -2,9 +2,9 @@
 #include <math.h>
 
 int digits(unsigned n) {
-    int l_n = (n * log10((1 + sqrt(5)) / 2)) - (log10(5) / 2);
+    int l_n = (n * log10((1 + sqrt(5)) / 2)) - (log10(5) / 2); // l_n -> log10(n)
 
-    return floor(l_n) + 1;
+    return floor(l_n) + 1;  // number of digits in n = floor(log10(n)) + 1
 }
 
 int main() {
