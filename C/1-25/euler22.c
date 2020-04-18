@@ -2,8 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define ARRAY_SIZE(arr)  (sizeof(arr) / sizeof((arr)[0]))
-
 int compare(const void* a, const void* b) {
     return strcmp(*(const char**)a, *(const char**)b);
 }
