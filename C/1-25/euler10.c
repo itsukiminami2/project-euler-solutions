@@ -13,11 +13,15 @@ int main() {
     sieve[0] = sieve[1] = 0;
     for (int i = 2; i*i < LIMIT; ++i) {
         if(sieve[i] == 1) {
-            sum += i;
-
             for (int j = i*i; j < LIMIT; j += i) {
                 sieve[j] = 0;
             }
+        }
+    }
+
+    for(int i = 2; i < LIMIT; ++i) {
+        if(sieve[i]) {
+            sum += i;
         }
     }
 
