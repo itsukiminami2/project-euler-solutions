@@ -1,26 +1,28 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define LIMIT 2000000
 
 int main() {
-    int limit = 2000000;
-    int n = 2;
+    char* sieve = malloc(LIMIT * (sizeof *sieve));
+    memset(sieve, 1, LIMIT * (sizeof *sieve));
+
     unsigned long long sum = 0;
 
-    while (n < limit) {
-        bool prime = true;
-        for (int i = 2; i*i <= n; ++i) {
-            if(n % i == 0) {
-                prime = false;
-                break;
+    sieve[0] = sieve[1] = 0;
+    for (int i = 2; i*i < LIMIT; ++i) {
+        if(sieve[i] == 1) {
+            sum += i;
+
+            for (int j = i*i; j < LIMIT; j += i) {
+                sieve[j] = 0;
             }
         }
-        if(prime) {
-            sum += n;
-        }
-
-        ++n;
     }
-    
+
+    free(sieve);
+
     printf("%llu\n", sum);
 
     return 0;
