@@ -9,7 +9,7 @@
 #include <string.h>
 #include <math.h>
 
-#define LIMIT 100000
+#define LIMIT 10000
 
 void generate_sieve(char*);
 int check(int);
