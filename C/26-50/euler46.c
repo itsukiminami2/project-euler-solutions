@@ -51,8 +51,8 @@ int check(int n)
     for(int p = n-1; p > 1; --p) { // find the largest prime < i
         if(sieve[p]) {
             int k = (n - p) / 2;
+            // check if 'k' is a perfect square
             double sqrt_k = sqrt(k);
-
             if(sqrt_k - round(sqrt_k) == 0) {
                 return 0;
             }
