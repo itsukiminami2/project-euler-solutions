@@ -2,7 +2,7 @@
     euler46.c - solution to project euler problem 46.
     Find the smallest odd composite no. not of the form n = p + 2k,
     where p is prime and k is a perfect square.
-    * Runs in 0.092secs.
+    * Runs in 0.0090secs.
 */
 
 #include <stdio.h>
