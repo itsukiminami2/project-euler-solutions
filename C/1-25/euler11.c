@@ -15,14 +15,11 @@ int main() {
     }
 
     int n;
-    while (!feof(fp)) {
-        for(int i = 0; i < 20; ++i) {
-            for (int j = 0; j < 20; j++) {
-                fscanf(fp, "%d", &n);
-                ar[i][j] = n;
-            }
-            
-        }
+    for(int i = 0; i < 20; ++i) {
+        for (int j = 0; j < 20; j++) {
+            fscanf(fp, "%d", &n);
+            ar[i][j] = n;
+        }        
     }
 
     int max_p = 0;  // largest product of 4 numbers across the matrix
